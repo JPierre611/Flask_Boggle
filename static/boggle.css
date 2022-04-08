@@ -1,0 +1,9 @@
+.board td {
+  width: 15px;
+  height: 15px;
+  border: solid 1px #666;
+}
+
+.board table {
+  padding-bottom: 2em;
+}
