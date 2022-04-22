@@ -4,6 +4,14 @@
   border: solid 1px #666;
 }
 
-.board table {
-  padding-bottom: 2em;
+#guess {
+  padding-top: 2em;
+}
+
+p.msg.err {
+  color: red;
+}
+
+p.msg.ok {
+  color: green;
 }

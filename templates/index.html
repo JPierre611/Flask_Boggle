@@ -24,13 +24,24 @@
 
     <form method="POST" id="guess">
       <label for="word">Enter a word: </label>
-      <input name="word" id="word" minlength="1" maxlength="4" autofocus>
+      <input name="word" class="word" autofocus>
       <button class="submit">Submit</button>
     </form>
+
+    <p class="msg">
+      <!-- boggle.js will put messages here dynamically -->
+    </p>
+
+    <ul class="words">
+      <!-- boggle.js will put words here as they score -->   
+    </ul>
 
   </section>
   <script src="http://unpkg.com/jquery"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/static/boggle.js"></script>
+  <script>
+    let game = new BoggleGame("boggle");
+  </script>
 </body>
 </html>
