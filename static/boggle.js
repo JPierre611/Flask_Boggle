@@ -2,6 +2,7 @@ class BoggleGame {
   /* make a new game at this board id */
 
   constructor(boardId) {
+    this.score = 0;
     this.words = new Set();
     this.board = $("#" + boardId);
     $(".submit", this.board).on("click", this.handleSubmit.bind(this));
@@ -10,6 +11,11 @@ class BoggleGame {
   showWord(word) {
     /* show word in list of words */
     $(".words", this.board).append($("<li>", { text: word }));
+  }
+
+  showScore() {
+    /* show game score */
+    $(".score", this.board).text(this.score);
   }
 
   showMessage(msg, cls) {
@@ -38,6 +44,8 @@ class BoggleGame {
       this.showMessage(`${word} is not a valid word on this board`, "err");
     } else {
       this.showWord(word);
+      this.score += word.length;
+      this.showScore();
       this.words.add(word);
       this.showMessage(`Added: ${word}`, "ok")
     }
