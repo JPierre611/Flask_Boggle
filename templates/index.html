@@ -22,11 +22,17 @@
       </tbody>
     </table>
 
-    <p>
-      Score: <b class="score">0</b>
+    <p>High Score: 
+      <b>{{ highscore }}</b> 
+      in {{ nplays }} plays
     </p>
 
-    <form method="POST" id="guess">
+    <p>
+      Score: <b class="score">0</b>
+      Seconds Left: <b class="timer"></b>
+    </p>
+
+    <form method="POST" class="guess">
       <label for="word">Enter a word: </label>
       <input name="word" class="word" autofocus>
       <button class="submit">Submit</button>
@@ -42,10 +48,10 @@
 
   </section>
   <script src="http://unpkg.com/jquery"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
   <script src="/static/boggle.js"></script>
   <script>
-    let game = new BoggleGame("boggle");
+    let game = new BoggleGame("boggle", 60);
   </script>
 </body>
 </html>
